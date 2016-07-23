@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71A64C901D43F9D300EACA96 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A64C8F1D43F9D300EACA96 /* Nimble.framework */; };
 		71A64C921D43F9E000EACA96 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A64C8F1D43F9D300EACA96 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71A64C941D4403C500EACA96 /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A64C931D4403C500EACA96 /* Markdown.swift */; };
 		71BE3C721D43F87000E5DEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE3C711D43F87000E5DEBB /* AppDelegate.swift */; };
 		71BE3C741D43F87000E5DEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BE3C731D43F87000E5DEBB /* Assets.xcassets */; };
 		71BE3C771D43F87000E5DEBB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71BE3C751D43F87000E5DEBB /* MainMenu.xib */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		71A64C8F1D43F9D300EACA96 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		71A64C931D4403C500EACA96 /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
 		71BE3C6E1D43F87000E5DEBB /* Markdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Markdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BE3C711D43F87000E5DEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BE3C731D43F87000E5DEBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				71BE3C731D43F87000E5DEBB /* Assets.xcassets */,
 				71BE3C751D43F87000E5DEBB /* MainMenu.xib */,
 				71BE3C781D43F87000E5DEBB /* Info.plist */,
+				71A64C931D4403C500EACA96 /* Markdown.swift */,
 			);
 			path = Markdown;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A64C941D4403C500EACA96 /* Markdown.swift in Sources */,
 				71BE3C721D43F87000E5DEBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

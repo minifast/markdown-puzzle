@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,8 +13,10 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Markdown" customModuleProvider="target">
             <connections>
+                <outlet property="markdownView" destination="ncq-wu-0aX" id="gG7-pP-oBo"/>
+                <outlet property="textView" destination="8eE-7P-zDA" id="okz-dB-2sJ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -669,12 +673,84 @@
         <window title="Markdown" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="contentRect" x="335" y="390" width="640" height="480"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ef-rs-AI6">
+                        <rect key="frame" x="320" y="0.0" width="320" height="480"/>
+                        <clipView key="contentView" id="EcE-fQ-xTE">
+                            <rect key="frame" x="1" y="1" width="318" height="478"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView editable="NO" selectable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ncq-wu-0aX">
+                                    <rect key="frame" x="0.0" y="0.0" width="318" height="478"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="318" height="478"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="318" height="478"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="P03-kT-BY3">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="ef5-jK-dav">
+                            <rect key="frame" x="304" y="1" width="15" height="478"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teQ-Fr-QZA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <clipView key="contentView" id="a8T-Ve-tBi">
+                            <rect key="frame" x="1" y="1" width="318" height="478"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="8eE-7P-zDA">
+                                    <rect key="frame" x="0.0" y="0.0" width="318" height="478"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="318" height="478"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="318" height="478"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Voe-Tx-rLC" id="3mb-UY-lRQ"/>
+                                    </connections>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="mOj-Gx-8ud">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="145-vQ-5ql">
+                            <rect key="frame" x="304" y="1" width="15" height="478"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2ef-rs-AI6" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" multiplier="0.5" id="0Pl-gH-vav"/>
+                    <constraint firstAttribute="trailing" secondItem="2ef-rs-AI6" secondAttribute="trailing" id="5EV-kD-JS3"/>
+                    <constraint firstItem="teQ-Fr-QZA" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="9Om-1b-Qge"/>
+                    <constraint firstItem="2ef-rs-AI6" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="DZN-hr-LFs"/>
+                    <constraint firstItem="teQ-Fr-QZA" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" multiplier="0.5" id="IWk-vK-9ts"/>
+                    <constraint firstItem="teQ-Fr-QZA" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="UXl-PQ-4h5"/>
+                    <constraint firstAttribute="bottom" secondItem="2ef-rs-AI6" secondAttribute="bottom" id="ZL0-IV-Vdw"/>
+                    <constraint firstAttribute="bottom" secondItem="teQ-Fr-QZA" secondAttribute="bottom" id="yJ2-fI-BOi"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="942" y="524.5"/>
         </window>
     </objects>
 </document>
