@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71A64C901D43F9D300EACA96 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A64C8F1D43F9D300EACA96 /* Nimble.framework */; };
+		71A64C921D43F9E000EACA96 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A64C8F1D43F9D300EACA96 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71BE3C721D43F87000E5DEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE3C711D43F87000E5DEBB /* AppDelegate.swift */; };
 		71BE3C741D43F87000E5DEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BE3C731D43F87000E5DEBB /* Assets.xcassets */; };
 		71BE3C771D43F87000E5DEBB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71BE3C751D43F87000E5DEBB /* MainMenu.xib */; };
@@ -23,7 +25,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		71A64C911D43F9D800EACA96 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				71A64C921D43F9E000EACA96 /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		71A64C8F1D43F9D300EACA96 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		71BE3C6E1D43F87000E5DEBB /* Markdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Markdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BE3C711D43F87000E5DEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BE3C731D43F87000E5DEBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A64C901D43F9D300EACA96 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +101,7 @@
 		71BE3C801D43F87000E5DEBB /* MarkdownTests */ = {
 			isa = PBXGroup;
 			children = (
+				71A64C8F1D43F9D300EACA96 /* Nimble.framework */,
 				71BE3C811D43F87000E5DEBB /* MarkdownTests.swift */,
 				71BE3C831D43F87000E5DEBB /* Info.plist */,
 			);
@@ -117,6 +135,7 @@
 				71BE3C791D43F87000E5DEBB /* Sources */,
 				71BE3C7A1D43F87000E5DEBB /* Frameworks */,
 				71BE3C7B1D43F87000E5DEBB /* Resources */,
+				71A64C911D43F9D800EACA96 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -335,6 +354,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = MarkdownTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.minifast.MarkdownTests;
@@ -348,6 +371,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = MarkdownTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.minifast.MarkdownTests;
@@ -375,6 +402,7 @@
 				71BE3C881D43F87000E5DEBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71BE3C891D43F87000E5DEBB /* Build configuration list for PBXNativeTarget "MarkdownTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +411,7 @@
 				71BE3C8B1D43F87000E5DEBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
