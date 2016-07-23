@@ -1,0 +1,11 @@
+pairs:
+  dr: Doc Ritezel; doc
+  cn: Christian Niles; nerdyc
+
+email:
+  prefix: pair
+  domain: ministryofvelocity.com
+
+email_addresses:
+
+global: true
