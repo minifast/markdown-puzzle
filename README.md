@@ -1,9 +1,10 @@
-# Markdown
+# Markdown Puzzle in Swift
 
-Markdown was written by John Gruber in 2004 as a text-to-HTML conversion tool with a highly readable syntax. In the following years, owing to the growth of the web, Markdown has seen adoption across many different domains, and may have replaced HTML for documentation purposes.
+This repo provides a fun exercise for Swift developers: parse and render [Markdown](http://daringfireball.net/projects/markdown/) text.
 
-Markdown is free software, available under the terms of a BSD-style open source license: [LICENSE.MARKDOWN](LICENSE.MARKDOWN).
+The immediate goal of this exercise is to render [SAMPLE.md](doc/SAMPLE.md) like this:
 
+   ![sample_rendered_by_mou](doc/sample.png)
 
 ## Requirements
 
@@ -11,7 +12,6 @@ Markdown is free software, available under the terms of a BSD-style open source 
 * XCode 7.3+
 * [Carthage](https://github.com/Carthage/Carthage)
 * Git
-
 
 ## Development Setup
 
@@ -21,14 +21,6 @@ Markdown is free software, available under the terms of a BSD-style open source 
 2. Run all tests (⌘U)
 3. Double-click on the test failure and make it pass.
 4. Start writing Markdown!
-
-
-## Goals
-
-The immediate goal of this exercise is to render [SAMPLE.md](doc/SAMPLE.md) like this:
-
-   ![sample_rendered_by_mou](doc/sample.png)
-
 
 ## Markdown Syntax
 
@@ -120,16 +112,17 @@ Ordered lists use numbers followed by periods:
 
 ## Rich Text, Cocoa, and You
 
-In order to make different Markdown elements have different fonts, colors, sizes, or decorations, we'll need to use [NSAttributedString](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class).  For example, in order to test that an NSAttributedString has the expected [NSFont](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFont_Class), we'll need to write the following test using Nimble:
+In order to format Markdown text, we'll need to use [NSAttributedString](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class).  For example, to test that an NSAttributedString has the expected [NSFont](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFont_Class), we'll need to write the following test:
 
 ```swift
 func test_Markdown_rendersAPlainString() {
     let renderedString = Markdown(string: "Just some text").render()
-    let font = rendered.attribute(NSFontAttributeName, atIndex: 0, effectiveRange: nil) as! NSFont
-    expect(font.fontName) == "Menlo-Regular"
+    let font = rendered.attribute(NSFontAttributeName, atIndex: 0, effectiveRange: nil) as? NSFont
+    expect(font?.fontName) == "Menlo-Regular"
 }
 ```
 
+The test uses [Nimble](https://github.com/Quick/Nimble), which provides a nicer syntax and better error messages than plain XCTest matchers.
 
 ## Contributing
 
